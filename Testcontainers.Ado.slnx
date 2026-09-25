@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Testcontainers.Ado/Testcontainers.Ado.csproj" />
+  <Project Path="Testcontainers.Ado.PostgreSql/Testcontainers.Ado.PostgreSql.csproj" />
+  <Project Path="Testcontainers.Ado.SqlServer/Testcontainers.Ado.SqlServer.csproj" />
+  <Project Path="Testcontainers.Ado.NUnit/Testcontainers.Ado.NUnit.csproj" />
+</Solution>

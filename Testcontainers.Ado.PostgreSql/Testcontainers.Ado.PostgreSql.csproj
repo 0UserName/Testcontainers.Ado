@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+	<!-- Integration of PostgreSQL Docker containers with test environment (Visual Studio, dotnet CLI) -->
+	<PackageReference Include="Testcontainers.PostgreSql" Version="4.15.0" />
+	<!-- Integration of PostgreSQL Docker containers with test environment (Visual Studio, dotnet CLI) -->
+
+	<!-- Data Access Layer -->
+	<PackageReference Include="Npgsql" Version="10.0.0" />
+	<!-- Data Access Layer -->
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Testcontainers.Ado\Testcontainers.Ado.csproj" />
+  </ItemGroup>
+
+</Project>

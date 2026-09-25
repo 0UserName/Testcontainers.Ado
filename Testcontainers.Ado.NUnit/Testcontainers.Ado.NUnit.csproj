@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+	<!-- NUnit -->
+	<PackageReference Include="NUnit" Version="4.6.1" />
+	<!-- NUnit -->
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Testcontainers.Ado\Testcontainers.Ado.csproj" />
+  </ItemGroup>
+
+</Project>

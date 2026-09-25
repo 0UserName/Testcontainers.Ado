@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+	<!-- Integration of SQL Server Docker containers with test environment (Visual Studio, dotnet CLI) -->
+	<PackageReference Include="Testcontainers.MsSql" Version="4.15.0" />
+	<!-- Integration of SQL Server Docker containers with test environment (Visual Studio, dotnet CLI) -->
+
+	<!-- Data Access Layer -->
+	<PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
+	<!-- Data Access Layer -->
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Testcontainers.Ado\Testcontainers.Ado.csproj" />
+  </ItemGroup>
+
+</Project>
