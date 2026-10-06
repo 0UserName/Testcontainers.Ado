@@ -8,8 +8,9 @@ namespace Testcontainers.Ado.NUnit
     public static class DbParameterConstraints
     {
         /// <summary>
-        /// Returns a constraint that tests whether the procedure has an output parameter
-        /// with the specified name and verifies that its value equals the expected value.
+        /// Returns a constraint that tests
+        /// an output parameter by name and
+        /// value.
         /// </summary>
         public static IResolveConstraint GetDbParameterEqualTo<T>(string name, T value)
         {
