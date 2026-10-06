@@ -12,6 +12,18 @@ on:
   workflow_dispatch:
 
 
+    # Input variables.
+    inputs:
+      enable_integration_tests:
+        description: 'Enable integration tests (overrides repository variable)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - 'true'
+          - 'false'
+        default: ''
+
 # Sets permissions of
 # the GITHUB_TOKEN to
 # allow deployment to
@@ -47,8 +59,13 @@ jobs:
         run: dotnet build --no-restore --configuration Release -p:GeneratePackageOnBuild=true -p:Version='${{ github.ref_name }}' -p:Authors='${{ github.repository_owner }}' -p:Description='${{ vars.PACKAGE_DESCRIPTION }}' -p:RepositoryUrl='${{ github.server_url }}/${{ github.repository }}' -p:RepositoryCommit='${{ github.sha }}'
 
 
-      - name: Test
-        run: dotnet test
+      - name: Run unit tests
+        run: dotnet test --filter "TestCategory!=Integration"
+
+
+      - name: Run integration tests
+        if: ${{ inputs.enable_integration_tests == '' && vars.ENABLE_INTEGRATION_TESTS == 'true' || inputs.enable_integration_tests == 'true' }}
+        run: dotnet test --filter "TestCategory=Integration"
 
 
       - name: Push
