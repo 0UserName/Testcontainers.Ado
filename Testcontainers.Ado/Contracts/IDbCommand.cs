@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using System.Data;
 using System.Data.Common;
 
 using System.Threading.Tasks;
@@ -8,6 +9,13 @@ namespace Testcontainers.Ado.Contracts
 {
     public interface IDbCommand
     {
+        /// <summary>
+        /// Returns a DbCommand that is
+        /// ready for execution against
+        /// the DbDataSource.
+        /// </summary>
+        DbCommand CreateCommand(string commandText, CommandType type, params DbTestParameter[] parameters);
+
         /// <summary>
         /// Executes the specified stored procedure.
         /// </summary>
